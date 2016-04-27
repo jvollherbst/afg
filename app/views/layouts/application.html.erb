@@ -5,33 +5,34 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-  <div class="container">
-<div>
-  <% if session[:current_user_id] %>
-  <h1>You have logged in.</h1>
+<div class="container">
+  <div>
+    <% if session[:current_user_id] %>
+    <h1>You have logged in.</h1>
 
-      <p><%= link_to "#{User.find(session[:current_user_id]).username}", user_path(session[:current_user_id]) %> ||
-      <%= link_to "Logout", sessions_path, method: :delete %></p>
-  <% else %>
+        <p><%= link_to "#{User.find(session[:current_user_id]).username}",  user_path(session[:current_user_id]) %> ||
+          <%= link_to "Logout", sessions_path, method: :delete %></p>
+          <% else %>
 
-  <p>Login Here</p>
-  <%= form_tag(sessions_path) do%>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <br>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <br>
-  <%= submit_tag "Login" %>
-  <% end %>
-<% end %>
+          <p>Login Here</p>
+          <%= form_tag(sessions_path) do%>
+          <%= label_tag :username %>
+          <%= text_field_tag :username %>
+          <br>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+          <br>
+          <%= submit_tag "Login" %>
+          <% end %>
+          <% end %>
+    </div>
+    <%= yield %>
  </div>
- </div>
 
-<%= yield %>
 
 </body>
 </html>

@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   font-family: 'Merriweather', serif;
+   background-color: #f7f7f7;
+   color: #333333;
+ }
+
+ .container {
+   width: 60em;
+   margin: 0 auto;
+ }
+
+ img {
+   width: 100%;
+ }
+
+ .img-col {
+   float: left;
+   width: 28%;
+   margin: .5em;
+ }

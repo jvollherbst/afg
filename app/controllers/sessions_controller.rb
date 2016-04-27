@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
 
-      redirect_to images_index_path
+      redirect_to images_path
 
     else
       redirect_to root_path

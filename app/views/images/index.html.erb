@@ -1,1 +1,9 @@
+
 <h1>Images Page</h1>
+
+<% @images.each do |image| %>
+  <div class="img-col">
+     <p><%= image.imgname %></p>
+     <p><img src="<%= asset_path image.imgurl%>" /></p>
+   </div>
+ <% end %>
