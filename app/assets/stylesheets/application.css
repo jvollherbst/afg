@@ -29,8 +29,35 @@
    width: 100%;
  }
 
+ img:hover{
+   opacity: .5;
+ }
+
  .img-col {
    float: left;
    width: 28%;
    margin: .5em;
  }
+
+ @media only screen and (max-width: 789px) and (min-width: 481px){
+   .container {
+     width: 75%;
+   }
+
+   .img-col {
+     width: 45%;
+   }
+
+}
+
+ @media only screen and (max-width : 480px) {
+   .container {
+     width: 100%;
+   }
+
+   .img-col {
+     float: none;
+     width: 95%;
+   }
+
+}
